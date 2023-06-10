@@ -6,6 +6,9 @@ class General extends Component {
         return (
             <div>
                 <h1>Hello World</h1>
+                <input placeholder="Name"></input>
+                <input placeholder="Email"></input>
+                <input placeholder="Phone number"></input>
             </div>
         )
     }
