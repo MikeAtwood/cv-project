@@ -5,7 +5,7 @@ class Education extends Component {
     render() {
         return(
             <div>
-                <h1>Education</h1>
+                <h2>Education</h2>
                 <input placeholder="School" style={{ border: 'none'}}></input>
                 <input placeholder="Degree" style={{ border: 'none'}}></input>
                 <input placeholder="From YYYY" style={{ border: 'none'}}></input>
