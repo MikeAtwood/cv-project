@@ -4,11 +4,15 @@ class General extends Component {
 
     render() {
         return (
-            <div>
+            <div className="header-info">
                 <h2>General</h2>
-                <input placeholder="Name" style={{ border: 'none'}}></input>
-                <input placeholder="Email" style={{ border: 'none'}}></input>
-                <input placeholder="Phone number" style={{ border: 'none'}}></input>
+                <div className="input-container">
+                    <input placeholder="First Name" style={{ border: 'none'}}></input>
+                    <input placeholder="Last Name" style={{ border: 'none'}}></input>
+                    <input placeholder="Email" style={{ border: 'none'}}></input>
+                    <input placeholder="Phone number" style={{ border: 'none'}}></input>
+                </div>
+                
             </div>
         )
     }

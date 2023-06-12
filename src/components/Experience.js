@@ -4,12 +4,14 @@ class Experience extends Component {
 
     render() {
         return (
-            <div>
+            <div className="info-header">
                 <h2>Experience</h2>
-                <input placeholder="Company"></input>
-                <input placeholder="Position"></input>
-                <input placeholder="Start Date YYYY"></input>
-                <input placeholder="End Date YYYY"></input>
+                <div className="input-container">
+                    <input placeholder="Company" style={{ border: 'none' }}></input>
+                    <input placeholder="Position" style={{ border: 'none' }}></input>
+                    <input placeholder="Start Date YYYY" style={{ border: 'none' }}></input>
+                    <input placeholder="End Date YYYY" style={{ border: 'none' }}></input>
+                </div>
             </div>
         )
     }

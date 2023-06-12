@@ -17,4 +17,17 @@ code {
   width: 70%;
   margin: 0 auto;
   padding-bottom: 30px;
+  justify-content: space-between;
+}
+
+.general-info {
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px;
 }
