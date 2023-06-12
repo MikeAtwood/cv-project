@@ -9,7 +9,9 @@ class Form extends Component {
         return (
             <div className='form'>
                 <General />
+                <hr className='section-line' />
                 <Education />
+                <hr className='section-line' />
                 <Experience />
             </div>
         )
