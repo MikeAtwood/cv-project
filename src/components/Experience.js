@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 class Experience extends Component {
-
+    //add contructor and create state method
     render() {
         return (
             <div className="info-header">
