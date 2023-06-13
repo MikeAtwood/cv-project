@@ -18,17 +18,19 @@ class Form extends Component {
       }
 
       handleChange = (values) => {
+        console.log(values)
         this.setState((prevState) => ({
             data: {
                 ...prevState.data,
                 ...values,
             }
-        }))
+        }), () => console.log(this.state.data, 'formmmm'))
       }
     render() {
+        const { data } = this.state;
         return (
             <div className='form'>
-                <General onChange={(data) => this.setState({ data })} />
+                <General data={data} onChange={this.handleChange} />
                 <hr className='section-line' />
                 <Education />
                 <hr className='section-line' />

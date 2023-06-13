@@ -14,8 +14,14 @@ class General extends Component {
     handleInputChange = (e) => {
         const { name, value } = e.target
         this.setState({ [name]: value }, () => {
-            this.props.onChange(this.state)
-            console.log(this.state.data)
+            const { firstName, lastName, email, phoneNumber } = this.state
+            this.props.onChange({
+                firstName,
+                lastName,
+                email,
+                phoneNumber,
+            })
+            //console.log(this.state)
         })
     }
     
