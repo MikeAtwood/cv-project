@@ -14,8 +14,9 @@ class General extends Component {
     handleInputChange = (e) => {
         const { name, value } = e.target
         this.setState({ [name]: value })
+        console.log(this)
     }
-
+    
     render() {
         return (
             <div className="header-info">
