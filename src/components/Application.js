@@ -7,7 +7,8 @@ class Application extends Component {
         return (
             <div className="application">
                 <h2>Application</h2>
-                <p>Name: {firstName} {lastName}</p>
+                <p>First Name: {firstName}</p>
+                <p>Last Name: {lastName}</p>
                 <p>Email: {email}</p>    
                 <p>Phone Number: {phoneNumber}</p>
             </div>

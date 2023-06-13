@@ -13,8 +13,10 @@ class General extends Component {
 
     handleInputChange = (e) => {
         const { name, value } = e.target
-        this.setState({ [name]: value })
-        console.log(this)
+        this.setState({ [name]: value }, () => {
+            this.props.onChange(this.state)
+            console.log(this.state.data)
+        })
     }
     
     render() {
