@@ -1,6 +1,22 @@
 import React, { Component } from "react";
 
 class Application extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            data: {
+                firstName: '',
+                lastName: '',
+                email: '',
+                phoneNumber: '',
+            }
+        }
+    }
+
+    handleChange = (data) => {
+        this.setState({ data })
+    }
+
     render() {
         const { data } = this.props
         const { firstName, lastName, email, phoneNumber } = data || {};
