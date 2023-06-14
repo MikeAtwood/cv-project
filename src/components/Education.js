@@ -13,7 +13,15 @@ class Education extends Component {
 
     handleInputChange = (e) => {
         const { name, value } = e.target
-        this.setState({ [name]: value })
+        this.setState({ [name]: value }, () => {
+            const { schoolName, degree, startDate, endDate } = this.state
+            this.props.onChange({
+                schoolName,
+                degree,
+                startDate,
+                endDate
+            })
+        })
     }
 
     render() {
