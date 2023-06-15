@@ -20,6 +20,7 @@ class General extends Component {
                             placeholder="First Name"
                             style={{ border: 'none' }}
                             type="text"
+                            name="firstName"
                             value={this.props.firstName}
                             onChange={this.props.handleInputChange}
                         />
@@ -27,6 +28,7 @@ class General extends Component {
                             placeholder="Last Name"
                             style={{ border: 'none' }}
                             type="text"
+                            name="lastName"
                             value={this.props.lastName}
                             onChange={this.props.handleInputChange}
                         />
@@ -34,6 +36,7 @@ class General extends Component {
                             placeholder="Email"
                             style={{ border: 'none' }}
                             type="text"
+                            name="email"
                             value={this.props.email}
                             onChange={this.props.handleInputChange}
                         />
@@ -41,6 +44,7 @@ class General extends Component {
                             placeholder="Phone Number"
                             style={{ border: 'none' }}
                             type="text"
+                            name="phoneNumber"
                             value={this.props.phoneNumber}
                             onChange={this.props.handleInputChange}
                         />
