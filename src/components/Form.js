@@ -13,8 +13,13 @@ class Form extends Component {
     }
 
     handleInputChange = (event) => {
-        const { name, value } = event.target
-        this.setState({ [name]: value })
+        const target = event.target
+        const value = target.value
+        const name = target.name
+
+        this.setState({
+            [name]: value
+        })
     }
 
     render() {
@@ -23,6 +28,11 @@ class Form extends Component {
                 <h1>form</h1>
                 <div className="input-field">
                     <General 
+                        firstName={this.state.firstName}
+                        lastName={this.state.lastName}
+                        email={this.state.email}
+                        phoneNumber={this.state.phoneNumber}
+                        handleInputChange={this.handleInputChange}
                     />
                 </div>
             </div>

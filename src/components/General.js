@@ -20,29 +20,29 @@ class General extends Component {
                             placeholder="First Name"
                             style={{ border: 'none' }}
                             type="text"
-                            value={this.state.firstName}
-                            onChange={this.handleInputChange}
+                            value={this.props.firstName}
+                            onChange={this.props.handleInputChange}
                         />
                         <input
                             placeholder="Last Name"
                             style={{ border: 'none' }}
                             type="text"
-                            value={this.state.lastName}
-                            onChange={this.handleInputChange}
+                            value={this.props.lastName}
+                            onChange={this.props.handleInputChange}
                         />
                         <input
                             placeholder="Email"
                             style={{ border: 'none' }}
                             type="text"
-                            value={this.state.email}
-                            onChange={this.handleInputChange}
+                            value={this.props.email}
+                            onChange={this.props.handleInputChange}
                         />
                         <input
                             placeholder="Phone Number"
                             style={{ border: 'none' }}
                             type="text"
-                            value={this.state.phoneNumber}
-                            onChange={this.handleInputChange}
+                            value={this.props.phoneNumber}
+                            onChange={this.props.handleInputChange}
                         />
                     </div>
         )
