@@ -5,6 +5,9 @@ class NewForm extends Component {
         return (
             <div>
                 <h1>new form</h1>
+                <div className="input-field">
+                    
+                </div>
             </div>
         )
     }
