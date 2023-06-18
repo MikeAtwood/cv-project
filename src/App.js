@@ -13,10 +13,12 @@ class App extends Component {
     return (
       <div className="App">
         <div className='column'>
+        <h1>form</h1>
           <Form />
         </div>
         <div className='column'>
-          <NewForm />
+        <h1>new form</h1>
+          <NewForm onChange={this.data}/>
         </div>
        
       </div>

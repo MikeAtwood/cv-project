@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import General from "./General";
+import NewForm from "./Application";
 
 class Form extends Component {
     constructor(props) {
@@ -20,9 +21,10 @@ class Form extends Component {
     }
 
     render() {
+        const { firstName, lastName, email, phoneNumber } = this.state
         return (
             <div>
-                <h1>form</h1>
+                
                 <div className="input-field">
                     <General 
                         firstName={this.state.firstName}
@@ -30,6 +32,12 @@ class Form extends Component {
                         email={this.state.email}
                         phoneNumber={this.state.phoneNumber}
                         handleInputChange={this.handleInputChange}
+                    />
+                    <NewForm
+                        firstName={firstName}
+                        lastName={lastName}
+                        email={email}
+                        phoneNumber={phoneNumber}
                     />
                 </div>
             </div>
