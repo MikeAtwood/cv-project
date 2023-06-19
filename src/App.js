@@ -4,11 +4,22 @@ import Form from './components/Form';
 import NewForm from './components/NewForm';
 
 class App extends Component {
-  
-
-  handleFormChange = (data) => {
-    this.setState({ data })
+  constructor(props) {
+    super(props)
+    this.state = {
+      newFormData: {
+        firstName: '',
+        lastName: '',
+        email: '',
+        phoneNumber: '',
+      }
+    }
   }
+
+  handleFormChange = (formValues) => {
+    this.setState({ newFormData: formValues })
+  }
+
   render() {
     return (
       <div className="App">
@@ -18,7 +29,7 @@ class App extends Component {
         </div>
         <div className='column'>
         <h1>new form</h1>
-          <NewForm onChange={this.data}/>
+          <NewForm formData={this.state.newFormData}/>
         </div>
        
       </div>

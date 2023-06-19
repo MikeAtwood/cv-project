@@ -10,6 +10,7 @@ class NewForm extends Component {
             phoneNumber: '',
         }
     }
+    
 
     render() {
         const { firstName, lastName, email, phoneNumber } = this.props
