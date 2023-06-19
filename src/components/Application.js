@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Form from "./Form";
 
 class NewForm extends Component {
     constructor(props) {
@@ -13,11 +12,15 @@ class NewForm extends Component {
     }
 
     render() {
-        //const { firstName, lastName, email, phoneNumber } = this.props
+        const { firstName, lastName, email, phoneNumber } = this.props
         return (
             <div className="input-field">
                 <div className="input-info">
-                    <Form />
+                    <input type="text" name="firstName" value={firstName} readOnly />
+                    <input type="text" name="lastName" value={lastName} readOnly />
+                    <input type="email" name="email" value={email} readOnly />
+                    <input type="tel" name="phoneNumber" value={phoneNumber} readOnly />
+
                 </div>
             </div>
         )
