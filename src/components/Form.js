@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import General from "./General";
-import NewForm from "./Application";
+import NewForm from "./NewForm";
 
 class Form extends Component {
     constructor(props) {
