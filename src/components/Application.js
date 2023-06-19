@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Form from "./Form";
 
-class NewForm extends Form {
+class NewForm extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -13,15 +13,11 @@ class NewForm extends Form {
     }
 
     render() {
-        const { firstName, lastName, email, phoneNumber } = this.props
+        //const { firstName, lastName, email, phoneNumber } = this.props
         return (
             <div className="input-field">
                 <div className="input-info">
-                    <input type="text" name="firstName" value={firstName} readOnly />
-                    <input type="text" name="lastName" value={lastName} readOnly />
-                    <input type="email" name="email" value={email} readOnly />
-                    <input type="tel" name="phoneNumber" value={phoneNumber} readOnly />
-
+                    <Form />
                 </div>
             </div>
         )

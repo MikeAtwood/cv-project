@@ -38,6 +38,7 @@ class Form extends Component {
                         lastName={lastName}
                         email={email}
                         phoneNumber={phoneNumber}
+                        handleInputChange={this.handleInputChange}
                     />
                 </div>
             </div>
