@@ -9,6 +9,7 @@ class NewForm extends Component {
             <div className="input-field">
                 <div className="input-info">
                     <input 
+                        className="newform-general"
                         type="text"
                         style={{ border: "none" }}
                         name="firstName"
@@ -16,6 +17,7 @@ class NewForm extends Component {
                         readOnly
                     />
                     <input 
+                        className="newform-general"
                         type="text"
                         style={{ border: "none" }}
                         name="lastName"

@@ -53,3 +53,9 @@ input {
   color: azure;
   margin: 5px;
 }
+
+.newform-general {
+  font-size: 40px;
+  font-weight: bolder;
+  margin: .4px;
+}
