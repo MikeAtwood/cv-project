@@ -18,10 +18,13 @@ class App extends Component {
 
   handleInputChange = (event) => {
     const { name, value } = event.target
-    this.setState({
+    this.setState(prevState => ({
+      newFormData: {
+        ...prevState.newFormData,
         [name]: value
-    })
-}
+      }
+    }))
+  }
 
   render() {
     return (
@@ -29,20 +32,17 @@ class App extends Component {
         <div className='column'>
           <h1>form</h1>
           <Form
-            firstName={this.state.firstName}
-            lastName={this.state.lastName}
-            email={this.state.email}
-            phoneNumber={this.state.phoneNumber}
+            newFormData={this.state.newFormData}
             handleInputChange={this.handleInputChange}
           />
         </div>
         <div className='column'>
           <h1>new form</h1>
           <NewForm
-            firstName={this.state.firstName}
-            lastName={this.state.lastName}
-            email={this.state.email}
-            phoneNumber={this.state.phoneNumber}
+            firstName={this.state.newFormData.firstName}
+            lastName={this.state.newFormData.lastName}
+            email={this.state.newFormData.email}
+            phoneNumber={this.state.newFormData.phoneNumber}
           />
         </div>
 

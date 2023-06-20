@@ -13,6 +13,7 @@ class General extends Component {
 
     
     render() {
+        console.log("In General:", this.props)
         return (
             <div className="input-info">
                         <h3>General</h3>
@@ -22,7 +23,7 @@ class General extends Component {
                             type="text"
                             name="firstName"
                             value={this.props.firstName}
-                            onChange={this.props.handleInputChange}
+                            onChange={(event) => this.props.handleInputChange(event)}
                         />
                         <input
                             placeholder="Last Name"

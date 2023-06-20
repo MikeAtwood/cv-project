@@ -15,16 +15,13 @@ class Form extends Component {
     
 
     render() {
+        console.log("From state:", this.props.firstName)
         return (
             <div>
                 
                 <div className="input-field">
                     <General 
-                        firstName={this.props.firstName}
-                        lastName={this.props.lastName}
-                        email={this.props.email}
-                        phoneNumber={this.props.phoneNumber}
-                        handleInputChange={this.handleInputChange}
+                        handleInputChange={this.props.handleInputChange}
                     />
                     
                 </div>
