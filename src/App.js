@@ -16,22 +16,36 @@ class App extends Component {
     }
   }
 
-  handleFormChange = (formValues) => {
-    this.setState({ newFormData: formValues })
-  }
+  handleInputChange = (event) => {
+    const { name, value } = event.target
+    this.setState({
+        [name]: value
+    })
+}
 
   render() {
     return (
       <div className="App">
         <div className='column'>
-        <h1>form</h1>
-          <Form />
+          <h1>form</h1>
+          <Form
+            firstName={this.state.firstName}
+            lastName={this.state.lastName}
+            email={this.state.email}
+            phoneNumber={this.state.phoneNumber}
+            handleInputChange={this.handleInputChange}
+          />
         </div>
         <div className='column'>
-        <h1>new form</h1>
-          <NewForm formData={this.state.newFormData}/>
+          <h1>new form</h1>
+          <NewForm
+            firstName={this.state.firstName}
+            lastName={this.state.lastName}
+            email={this.state.email}
+            phoneNumber={this.state.phoneNumber}
+          />
         </div>
-       
+
       </div>
     );
   }
