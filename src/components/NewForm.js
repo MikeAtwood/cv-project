@@ -10,24 +10,28 @@ class NewForm extends Component {
                 <div className="input-info">
                     <input 
                         type="text"
+                        style={{ border: "none" }}
                         name="firstName"
                         value={firstName}
                         readOnly
                     />
                     <input 
                         type="text"
+                        style={{ border: "none" }}
                         name="lastName"
                         value={lastName}
                         readOnly
                     />
                     <input 
                         type="email"
+                        style={{ border: "none" }}
                         name="email"
                         value={email}
                         readOnly
                     />
                     <input 
                         type="tel"
+                        style={{ border: "none" }}
                         name="phoneNumber"
                         value={phoneNumber}
                         readOnly
