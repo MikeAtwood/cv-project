@@ -16,7 +16,7 @@ class Experience extends Component {
                     placeholder="Position"
                     type="text"
                     style={{ border: 'none' }}
-                    name="postion"
+                    name="position"
                     value={this.props.position}
                     onChange={(event) => this.props.handleInputChange(event)}
                 />
