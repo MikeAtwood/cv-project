@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import General from "./General";
 import Education from "./Education";
+import Experience from "./Experience";
 
 class Form extends Component {
     constructor(props) {
@@ -27,7 +28,8 @@ class Form extends Component {
                     <Education
                         handleInputChange={this.props.handleInputChange}
                     />
-                    
+                    <Experience
+                    />
                 </div>
             </div>
         )
