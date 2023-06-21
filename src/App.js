@@ -15,7 +15,12 @@ class App extends Component {
         schoolName: '',
         titleOfStudy: '',
         studyStartDate: '',
-        studyEndDate: ''
+        studyEndDate: '',
+        companyName: '',
+        position: '',
+        mainTasks: '',
+        jobStartDate: '',
+        jobEndDate: '',
       }
     }
   }
