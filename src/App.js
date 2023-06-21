@@ -48,6 +48,9 @@ class App extends Component {
             email={this.state.newFormData.email}
             phoneNumber={this.state.newFormData.phoneNumber}
             schoolName={this.state.newFormData.schoolName}
+            titleOfStudy={this.state.newFormData.titleOfStudy}
+            studyStartDate={this.state.newFormData.studyStartDate}
+            studyEndDate={this.state.newFormData.studyEndDate}
           />
         </div>
 
