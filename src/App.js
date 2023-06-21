@@ -15,7 +15,7 @@ class App extends Component {
         schoolName: '',
         titleOfStudy: '',
         studyStartDate: '',
-        studyEndDate: '',
+        studyEndDate: ''
       }
     }
   }
@@ -47,6 +47,7 @@ class App extends Component {
             lastName={this.state.newFormData.lastName}
             email={this.state.newFormData.email}
             phoneNumber={this.state.newFormData.phoneNumber}
+            schoolName={this.state.newFormData.schoolName}
           />
         </div>
 

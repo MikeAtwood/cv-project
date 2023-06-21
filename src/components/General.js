@@ -11,45 +11,44 @@ class General extends Component {
         }
     }
 
-    
+
     render() {
-        console.log("In General:", this.props)
         return (
             <div className="input-info">
-                        <h3>General</h3>
-                        <input
-                            placeholder="First Name"
-                            style={{ border: 'none' }}
-                            type="text"
-                            name="firstName"
-                            value={this.props.firstName}
-                            onChange={(event) => this.props.handleInputChange(event)}
-                        />
-                        <input
-                            placeholder="Last Name"
-                            style={{ border: 'none' }}
-                            type="text"
-                            name="lastName"
-                            value={this.props.lastName}
-                            onChange={this.props.handleInputChange}
-                        />
-                        <input
-                            placeholder="Email"
-                            style={{ border: 'none' }}
-                            type="text"
-                            name="email"
-                            value={this.props.email}
-                            onChange={this.props.handleInputChange}
-                        />
-                        <input
-                            placeholder="Phone Number"
-                            style={{ border: 'none' }}
-                            type="text"
-                            name="phoneNumber"
-                            value={this.props.phoneNumber}
-                            onChange={this.props.handleInputChange}
-                        />
-                    </div>
+                <h3>General</h3>
+                <input
+                    placeholder="First Name"
+                    style={{ border: 'none' }}
+                    type="text"
+                    name="firstName"
+                    value={this.props.firstName}
+                    onChange={(event) => this.props.handleInputChange(event)}
+                />
+                <input
+                    placeholder="Last Name"
+                    style={{ border: 'none' }}
+                    type="text"
+                    name="lastName"
+                    value={this.props.lastName}
+                    onChange={this.props.handleInputChange}
+                />
+                <input
+                    placeholder="Email"
+                    style={{ border: 'none' }}
+                    type="text"
+                    name="email"
+                    value={this.props.email}
+                    onChange={this.props.handleInputChange}
+                />
+                <input
+                    placeholder="Phone Number"
+                    style={{ border: 'none' }}
+                    type="text"
+                    name="phoneNumber"
+                    value={this.props.phoneNumber}
+                    onChange={this.props.handleInputChange}
+                />
+            </div>
         )
     }
 }

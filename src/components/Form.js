@@ -9,14 +9,14 @@ class Form extends Component {
             firstName: '',
             lastName: '',
             email: '',
-            phoneNumber: ''
+            phoneNumber: '',
+            schoolName: '',
         }
     }
 
     
 
     render() {
-        console.log("From state:", this.props.firstName)
         return (
             <div>
                 

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 class Education extends Component {
     render() {
+        console.log(this.props)
         return(
             <div className="input-info">
                 <h3>Education</h3>
@@ -36,6 +37,7 @@ class Education extends Component {
                     name="studyEndDate"
                     value={this.props.studyEndDate}
                     onChange={(event) => this.props.handleInputChange(event)}
+                    mind={this.props.studyStartDate}
                 />
             </div>
         )
