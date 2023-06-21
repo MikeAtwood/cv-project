@@ -15,7 +15,9 @@ class NewForm extends Component {
             studyEndDate, 
             companyName, 
             position,
-            mainTasks
+            mainTasks,
+            jobStartDate,
+            jobEndDate
         } = this.props
 
         return (
@@ -106,6 +108,20 @@ class NewForm extends Component {
                         style={{ border: 'none' }}
                         name="mainTasks"
                         value={mainTasks}
+                        readOnly
+                    />
+                    <input
+                        type="text"
+                        style={{ border: 'none' }}
+                        name="jobStartDate"
+                        value={jobStartDate}
+                        readOnly
+                    />
+                    <input
+                        type="text"
+                        style={{ border: 'none' }}
+                        name="jobEndDate"
+                        value={jobEndDate}
                         readOnly
                     />
                 </div>
