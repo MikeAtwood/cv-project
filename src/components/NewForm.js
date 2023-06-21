@@ -56,7 +56,7 @@ class NewForm extends Component {
                 </div>
                 <div className="input-info">
                     <input
-                        className="newform-general"
+                        className="extra-info"
                         type="text"
                         style={{ border: 'none' }}
                         name="schoolName"
@@ -64,7 +64,7 @@ class NewForm extends Component {
                         readOnly
                     />
                     <input
-                        className="newform-general"
+                        className="more-info"
                         type="text"
                         style={{ border: 'none' }}
                         name="titleOfStudy"
@@ -72,6 +72,7 @@ class NewForm extends Component {
                         readOnly
                     />
                     <input
+                        className="more-info"
                         type="text"
                         style={{ border: 'none' }}
                         name="studyStartDate"
@@ -79,6 +80,7 @@ class NewForm extends Component {
                         readOnly
                     />
                     <input
+                        className="more-info"
                         type="text"
                         style={{ border: 'none' }}
                         name="studyEndDate"
@@ -88,7 +90,7 @@ class NewForm extends Component {
                 </div>
                 <div className="input-info">
                     <input
-                        className="newform-general"
+                        className="extra-info"
                         type="text"
                         style={{ border: 'none' }}
                         name="companyName"
@@ -96,7 +98,7 @@ class NewForm extends Component {
                         readOnly
                     />
                     <input
-                        className="newform-general"
+                        className="more-info"
                         type="text"
                         style={{ border: 'none' }}
                         name="position"
@@ -104,6 +106,7 @@ class NewForm extends Component {
                         readOnly
                     />
                     <input
+                        className="more-info"
                         type="text"
                         style={{ border: 'none' }}
                         name="mainTasks"
@@ -111,6 +114,7 @@ class NewForm extends Component {
                         readOnly
                     />
                     <input
+                        className="more-info"
                         type="text"
                         style={{ border: 'none' }}
                         name="jobStartDate"
@@ -118,6 +122,7 @@ class NewForm extends Component {
                         readOnly
                     />
                     <input
+                        className="more-info"
                         type="text"
                         style={{ border: 'none' }}
                         name="jobEndDate"

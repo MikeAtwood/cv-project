@@ -59,3 +59,12 @@ input {
   font-weight: bolder;
   margin: .4px;
 }
+
+.extra-info {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.more-info {
+  font-size: 20px;
+}
