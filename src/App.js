@@ -56,6 +56,11 @@ class App extends Component {
             titleOfStudy={this.state.newFormData.titleOfStudy}
             studyStartDate={this.state.newFormData.studyStartDate}
             studyEndDate={this.state.newFormData.studyEndDate}
+            companyName={this.state.newFormData.companyName}
+            position={this.state.newFormData.position}
+            mainTasks={this.state.newFormData.mainTasks}
+            jobStartDate={this.state.newFormData.jobStartDate}
+            jobEndDate={this.state.newFormData.jobEndDate}
           />
         </div>
 
