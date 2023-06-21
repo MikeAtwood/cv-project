@@ -4,7 +4,7 @@ class NewForm extends Component {
 
 
     render() {
-        const { firstName, lastName, email, phoneNumber, schoolName} = this.props
+        const { firstName, lastName, email, phoneNumber, schoolName, titleOfStudy, studyStartDate, studyEndDate } = this.props
         return (
             <div className="input-field">
                 <div className="input-info">
@@ -46,6 +46,28 @@ class NewForm extends Component {
                         style={{ border: 'none' }}
                         name="schoolName"
                         value={schoolName}
+                        readOnly
+                    />
+                    <input
+                        className="newform-general"
+                        type="text"
+                        style={{ border: 'none' }}
+                        name="titleOfStudy"
+                        value={titleOfStudy}
+                        readOnly
+                    />
+                    <input
+                        type="text"
+                        style={{ border: 'none' }}
+                        name="studyStartDate"
+                        value={studyStartDate}
+                        readOnly
+                    />
+                    <input
+                        type="text"
+                        style={{ border: 'none' }}
+                        name="studyEndDate"
+                        value={studyEndDate}
                         readOnly
                     />
                 </div>
