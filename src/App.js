@@ -12,6 +12,10 @@ class App extends Component {
         lastName: '',
         email: '',
         phoneNumber: '',
+        schoolName: '',
+        titleOfStudy: '',
+        studyStartDate: '',
+        studyEndDate: '',
       }
     }
   }

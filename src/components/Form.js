@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import General from "./General";
+import Education from "./Education";
 
 class Form extends Component {
     constructor(props) {
@@ -21,6 +22,9 @@ class Form extends Component {
                 
                 <div className="input-field">
                     <General 
+                        handleInputChange={this.props.handleInputChange}
+                    />
+                    <Education
                         handleInputChange={this.props.handleInputChange}
                     />
                     
