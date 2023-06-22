@@ -4,6 +4,7 @@ class Experience extends Component {
     render() {
         return(
             <div className="input-info">
+                <h3>Experience</h3>
                 <input
                     placeholder="Company"
                     type="text"
