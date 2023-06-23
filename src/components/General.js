@@ -11,7 +11,6 @@ class General extends Component {
         }
     }
 
-
     render() {
         return (
             <div className="input-info">
