@@ -29,8 +29,9 @@ code {
 .input-field {
   border: 1px solid #1b1a1a;
   width: 70%;
-  height: 700px;
+  height: auto;
   margin: 0 auto;
+  margin-bottom: 25px;
   padding-bottom: 30px;
   justify-content: space-between;
   background-color: #1b1a1a;
@@ -68,3 +69,4 @@ input {
 .more-info {
   font-size: 20px;
 }
+
