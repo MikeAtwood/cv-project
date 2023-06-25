@@ -31,7 +31,7 @@ class Form extends Component {
                     <Experience
                         handleInputChange={this.props.handleInputChange}
                     />
-                    <button>Add+</button>
+                    
                 </div>
             </div>
         )
