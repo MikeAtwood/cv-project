@@ -2,7 +2,6 @@ import React, { Component } from "react";
 
 class NewForm extends Component {
 
-
     render() {
         const { 
             firstName, 
@@ -17,7 +16,7 @@ class NewForm extends Component {
             position,
             mainTasks,
             jobStartDate,
-            jobEndDate
+            jobEndDate,
         } = this.props
 
         return (
