@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 class Experience extends Component {
     render() {
+        console.log(this.props.handleInputChange)
         return(
             <div className="input-info">
                 <h3>Experience</h3>

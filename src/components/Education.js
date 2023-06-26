@@ -2,7 +2,6 @@ import React, { Component } from "react";
 
 class Education extends Component {
     render() {
-        console.log(this.props)
         return(
             <div className="input-info">
                 <h3>Education</h3>
