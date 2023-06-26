@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Form from './components/Form';
 import NewForm from './components/NewForm';
+import Experience from './components/Experience';
 
 class App extends Component {
   constructor(props) {
@@ -16,11 +17,17 @@ class App extends Component {
         titleOfStudy: '',
         studyStartDate: '',
         studyEndDate: '',
-        companyName: '',
-        position: '',
-        mainTasks: '',
-        jobStartDate: '',
-        jobEndDate: '',
+        numExperiences: 0, // add numExperiences property
+        maxExperiences: 5, // add maxExperiences property
+        experiences: [
+          {
+            companyName: '',
+            position: '',
+            mainTasks: '',
+            jobStartDate: '',
+            jobEndDate: '',
+          }
+        ]
       }
     }
   }
@@ -35,7 +42,37 @@ class App extends Component {
     }))
   }
 
+  handleAddExperience = () => {
+    this.setState(prevState => ({
+      numExperiences: prevState.numExperiences + 1,
+      experiences: [...prevState.experiences, { company: '', position: '', tasks: '', startDate: '', endDate: '' }]
+    }))
+  }
+
+  handleExperienceChange = (index, event) => {
+    const { name, value } = event.target
+    const experiences = [...this.state.experiences]
+    experiences[index][name] = value
+    this.setState({ experiences })
+  }
+
   render() {
+      const { numExperiences, experiences } = this.state
+      const experienceSections = []
+      for (let i = 0; i < numExperiences; i++) {
+          experienceSections.push(
+              <Experience
+                  key={i}
+                  index={i}
+                  company={experiences[i].company}
+                  position={experiences[i].position}
+                  tasks={experiences[i].tasks}
+                  startDate={experiences[i].startDate}
+                  endDate={experiences[i].endDate}
+                  onExperienceChange={this.handleExperienceChange}
+              />
+          )
+      }
     return (
       <div className="App">
         <div className='column'>
@@ -43,6 +80,9 @@ class App extends Component {
           <Form
             newFormData={this.state.newFormData}
             handleInputChange={this.handleInputChange}
+            handleAddExperience={this.handleAddExperience}
+            handleExperienceChange={this.handleExperienceChange}
+            experienceSections={this.experienceSections}
           />
         </div>
         <div className='column'>
