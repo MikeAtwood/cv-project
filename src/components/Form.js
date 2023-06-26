@@ -24,7 +24,7 @@ class Form extends Component {
                         onExperienceChange={this.props.handleExperienceChange}
                     />
                      {experienceSections}
-                     <button onClick={this.handleAddExperience}>Add+</button>
+                     <button onClick={this.props.handleAddExperience}>Add+</button>
                 </div>
             </div>
         )

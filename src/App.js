@@ -44,8 +44,11 @@ class App extends Component {
 
   handleAddExperience = () => {
     this.setState(prevState => ({
-      numExperiences: prevState.numExperiences + 1,
-      experiences: [...prevState.experiences, { company: '', position: '', tasks: '', startDate: '', endDate: '' }]
+      newFormData: {
+      ...prevState.newFormData,
+      numExperiences: prevState.newFormData.numExperiences + 1,
+      experiences: [...prevState.newFormData.experiences, { company: '', position: '', tasks: '', startDate: '', endDate: '' }]
+      }
     }))
   }
 
