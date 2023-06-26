@@ -46,7 +46,7 @@ class Experience extends Component {
                     onChange={(event) => this.props.handleInputChange(event)}
                     min={this.props.jobStartDate}
                 />
-               
+                
             </div>
         )
     }
