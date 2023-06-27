@@ -7,7 +7,6 @@ import Experience from './components/Experience';
 class App extends Component {
   constructor(props) {
     super(props)
-    this.handleExperienceChange = this.handleExperienceChange.bind(this);
     this.state = {
       newFormData: {
         firstName: '',
@@ -54,15 +53,20 @@ class App extends Component {
   }
 
   handleExperienceChange = (index, event) => {
+    const { newFormData } = this.state
+    const {experiences } = newFormData
     const { name, value } = event.target
-    const experiences = [...this.state.newFormData.experiences]
-    experiences[index][name] = value
-    this.setState(prevState => ({
+    const updatedExperiences = experiences.slice()
+    updatedExperiences[index] = {
+      ...updatedExperiences[index],
+      [name]: value
+    }
+    this.setState({
       newFormData: {
-        ...prevState.newFormData,
-        experiences
+        ...newFormData,
+        experiences: updatedExperiences
       }
-    }))
+    })
   }
 
   render() {
@@ -78,7 +82,7 @@ class App extends Component {
                   mainTasks={experiences[i].mainTasks}
                   jobStartDate={experiences[i].jobStartDate}
                   jobEndDate={experiences[i].jobEndDate}
-                  onExperienceChange={this.onExperienceChange}
+                  onExperienceChange={this.handleExperienceChange}
               />
           )
       }
