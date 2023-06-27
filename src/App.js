@@ -54,24 +54,29 @@ class App extends Component {
 
   handleExperienceChange = (index, event) => {
     const { name, value } = event.target
-    const experiences = [...this.state.experiences]
+    const experiences = [...this.state.newFormData.experiences]
     experiences[index][name] = value
-    this.setState({ experiences })
+    this.setState(prevState => ({
+      newFormData: {
+        ...prevState.newFormData,
+        experiences
+      }
+    }))
   }
 
   render() {
-      const { numExperiences, experiences } = this.state
+      const { numExperiences, experiences } = this.state.newFormData
       const experienceSections = []
       for (let i = 0; i < numExperiences; i++) {
           experienceSections.push(
               <Experience
                   key={i}
                   index={i}
-                  company={experiences[i].company}
+                  companyName={experiences[i].companyName}
                   position={experiences[i].position}
-                  tasks={experiences[i].tasks}
-                  startDate={experiences[i].startDate}
-                  endDate={experiences[i].endDate}
+                  mainTasks={experiences[i].mainTasks}
+                  jobStartDate={experiences[i].jobStartDate}
+                  jobEndDate={experiences[i].jobEndDate}
                   onExperienceChange={this.handleExperienceChange}
               />
           )
@@ -85,7 +90,7 @@ class App extends Component {
             handleInputChange={this.handleInputChange}
             handleAddExperience={this.handleAddExperience}
             handleExperienceChange={this.handleExperienceChange}
-            experienceSections={this.experienceSections}
+            experienceSections={experienceSections}
           />
         </div>
         <div className='column'>
@@ -104,6 +109,7 @@ class App extends Component {
             mainTasks={this.state.newFormData.mainTasks}
             jobStartDate={this.state.newFormData.jobStartDate}
             jobEndDate={this.state.newFormData.jobEndDate}
+            experienceSections={experienceSections}
           />
         </div>
 
