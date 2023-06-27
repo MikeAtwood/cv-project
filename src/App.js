@@ -7,6 +7,7 @@ import Experience from './components/Experience';
 class App extends Component {
   constructor(props) {
     super(props)
+    this.handleExperienceChange = this.handleExperienceChange.bind(this);
     this.state = {
       newFormData: {
         firstName: '',
@@ -77,7 +78,7 @@ class App extends Component {
                   mainTasks={experiences[i].mainTasks}
                   jobStartDate={experiences[i].jobStartDate}
                   jobEndDate={experiences[i].jobEndDate}
-                  onExperienceChange={this.handleExperienceChange}
+                  onExperienceChange={this.onExperienceChange}
               />
           )
       }
@@ -89,7 +90,7 @@ class App extends Component {
             newFormData={this.state.newFormData}
             handleInputChange={this.handleInputChange}
             handleAddExperience={this.handleAddExperience}
-            handleExperienceChange={this.handleExperienceChange}
+            onExperienceChange={this.handleExperienceChange}
             experienceSections={experienceSections}
           />
         </div>

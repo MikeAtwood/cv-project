@@ -12,7 +12,7 @@ class Experience extends Component {
                     style={{ border: 'none' }}
                     name="companyName"
                     value={this.props.companyName}
-                    onChange={(event) => this.props.handleInputChange(event)}
+                    onChange={(event) => this.props.onExperienceChange(this.props.index, event)}
                 />
                 <input
                     placeholder="Position"
@@ -20,7 +20,7 @@ class Experience extends Component {
                     style={{ border: 'none' }}
                     name="position"
                     value={this.props.position}
-                    onChange={(event) => this.props.handleInputChange(event)}
+                    onChange={(event) => this.props.onExperienceChange(this.props.index, event)}
                 />
                 <input
                     placeholder="Tasks"
@@ -28,7 +28,7 @@ class Experience extends Component {
                     style={{ border: 'none' }}
                     name="mainTasks"
                     value={this.props.mainTasks}
-                    onChange={(event) => this.props.handleInputChange(event)}
+                    onChange={(event) => this.props.onExperienceChange(this.props.index, event)}
                 />
                 <input
                     placeholder="Start Date"
@@ -36,7 +36,7 @@ class Experience extends Component {
                     style={{ border: 'none' }}
                     name="jobStartDate"
                     value={this.props.jobStartDate}
-                    onChange={(event) => this.props.handleInputChange(event)}
+                    onChange={(event) => this.props.onExperienceChange(this.props.index, event)}
                 />
                 <input
                     placeholder="End Date"
@@ -44,7 +44,7 @@ class Experience extends Component {
                     style={{ border: 'none' }}
                     name="jobEndDate"
                     value={this.props.jobEndDate}
-                    onChange={(event) => this.props.handleInputChange(event)}
+                    onChange={(event) => this.props.onExperienceChange(this.props.index, event)}
                     min={this.props.jobStartDate}
                 />
                 
