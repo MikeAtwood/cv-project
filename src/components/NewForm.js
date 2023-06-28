@@ -95,7 +95,7 @@ class NewForm extends Component {
                                     type="text"
                                     style={{ border: 'none' }}
                                     name={`companyName${index}`}
-                                    value={experience.companyName}
+                                    value={experience.this.props.companyName}
                                     readOnly />
                                 <input
                                     className="more-info"

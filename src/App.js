@@ -115,6 +115,7 @@ class App extends Component {
             jobStartDate={this.state.newFormData.jobStartDate}
             jobEndDate={this.state.newFormData.jobEndDate}
             updatedExperiences={this.state.updatedExperiences}
+            experiences={this.state.newFormData.experiences}
             experienceSections={experienceSections}
           />
         </div>
