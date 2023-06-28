@@ -2,7 +2,15 @@ import React, { Component } from "react";
 
 class Experience extends Component {
     render() {
-       
+        const {
+            index,
+            companyName,
+            position, 
+            mainTasks,
+            jobStartDate,
+            jobEndDate,
+            onExperienceChange
+        } = this.props;
         return(
             <div className="input-info">
                 <h3>Experience</h3>
@@ -11,41 +19,41 @@ class Experience extends Component {
                     type="text"
                     style={{ border: 'none' }}
                     name="companyName"
-                    value={this.props.companyName}
-                    onChange={(event) => this.props.onExperienceChange(this.props.index, event)}
+                    value={companyName}
+                    onChange={(event) => onExperienceChange(index, event)}
                 />
                 <input
                     placeholder="Position"
                     type="text"
                     style={{ border: 'none' }}
                     name="position"
-                    value={this.props.position}
-                    onChange={(event) => this.props.onExperienceChange(this.props.index, event)}
+                    value={position}
+                    onChange={(event) => onExperienceChange(index, event)}
                 />
                 <input
                     placeholder="Tasks"
                     type="text"
                     style={{ border: 'none' }}
                     name="mainTasks"
-                    value={this.props.mainTasks}
-                    onChange={(event) => this.props.onExperienceChange(this.props.index, event)}
+                    value={mainTasks}
+                    onChange={(event) => onExperienceChange(index, event)}
                 />
                 <input
                     placeholder="Start Date"
                     type="date"
                     style={{ border: 'none' }}
                     name="jobStartDate"
-                    value={this.props.jobStartDate}
-                    onChange={(event) => this.props.onExperienceChange(this.props.index, event)}
+                    value={jobStartDate}
+                    onChange={(event) => onExperienceChange(index, event)}
                 />
                 <input
                     placeholder="End Date"
                     type="date"
                     style={{ border: 'none' }}
                     name="jobEndDate"
-                    value={this.props.jobEndDate}
-                    onChange={(event) => this.props.onExperienceChange(this.props.index, event)}
-                    min={this.props.jobStartDate}
+                    value={jobEndDate}
+                    onChange={(event) => onExperienceChange(index, event)}
+                    min={jobStartDate}
                 />
                 
             </div>
