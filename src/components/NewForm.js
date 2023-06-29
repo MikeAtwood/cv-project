@@ -95,34 +95,34 @@ class NewForm extends Component {
                                     type="text"
                                     style={{ border: 'none' }}
                                     name={`companyName${index}`}
-                                    value={experience.this.props.companyName}
+                                    value={experience.companyName}
                                     readOnly />
                                 <input
                                     className="more-info"
                                     type="text"
                                     style={{ border: 'none' }}
-                                    name="position"
+                                    name={`position${index}`}
                                     value={experience.position}
                                     readOnly />
                                 <input
                                     className="more-info"
                                     type="text"
                                     style={{ border: 'none' }}
-                                    name="mainTasks"
+                                    name={`mainTasks${index}`}
                                     value={experience.mainTasks}
                                     readOnly />
                                 <input
                                     className="more-info"
                                     type="text"
                                     style={{ border: 'none' }}
-                                    name="jobStartDate"
+                                    name={`jobStartDate${index}`}
                                     value={experience.jobStartDate}
                                     readOnly />
                                 <input
                                     className="more-info"
                                     type="text"
                                     style={{ border: 'none' }}
-                                    name="jobEndDate"
+                                    name={`jobEndDate${index}`}
                                     value={experience.jobEndDate}
                                     readOnly />
                             </div></>

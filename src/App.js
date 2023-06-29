@@ -45,60 +45,50 @@ class App extends Component {
   handleAddExperience = () => {
     this.setState(prevState => ({
       newFormData: {
-      ...prevState.newFormData,
-      numExperiences: prevState.newFormData.numExperiences + 1,
-      experiences: [...prevState.newFormData.experiences, { company: '', position: '', tasks: '', startDate: '', endDate: '' }]
+        ...prevState.newFormData,
+        numExperiences: prevState.newFormData.numExperiences + 1,
+        experiences: [...prevState.newFormData.experiences, { company: '', position: '', tasks: '', startDate: '', endDate: '' }]
       }
     }))
   }
 
   handleExperienceChange = (index, event) => {
     const { newFormData } = this.state
-    const {experiences } = newFormData
+    const { experiences } = newFormData
     const { name, value } = event.target
-    const updatedExperiences = experiences.slice()
+    const updatedExperiences = [...experiences]
     updatedExperiences[index] = {
       ...updatedExperiences[index],
       [name]: value
     }
-    console.log('Previous state:', this.state)
+
+    const updatedFormData = {
+      ...newFormData,
+      experiences: updatedExperiences
+    }
 
     this.setState({
-      newFormData: {
-        ...newFormData,
-        experiences: updatedExperiences,
-        forceRender: Date.now(), 
-      },
-    },
-    () => {
-      this.setState({
-        newFormData: {
-          ...newFormData,
-          forceRender: null,
-        }
-      })
-      console.log('Updated state:', this.state); // Add console log after state update
-    }
-    )
+      newFormData: updatedFormData
+    })
   }
 
   render() {
-      const { numExperiences, experiences } = this.state.newFormData
-      const experienceSections = []
-      for (let i = 0; i < numExperiences; i++) {
-          experienceSections.push(
-              <Experience
-                  key={i}
-                  index={i}
-                  companyName={experiences[i].companyName}
-                  position={experiences[i].position}
-                  mainTasks={experiences[i].mainTasks}
-                  jobStartDate={experiences[i].jobStartDate}
-                  jobEndDate={experiences[i].jobEndDate}
-                  onExperienceChange={this.handleExperienceChange}
-              />
-          )
-      }
+    const { numExperiences, experiences } = this.state.newFormData
+    const experienceSections = []
+    for (let i = 0; i < numExperiences; i++) {
+      experienceSections.push(
+        <Experience
+          key={i}
+          index={i}
+          companyName={experiences[i].companyName}
+          position={experiences[i].position}
+          mainTasks={experiences[i].mainTasks}
+          jobStartDate={experiences[i].jobStartDate}
+          jobEndDate={experiences[i].jobEndDate}
+          onExperienceChange={this.handleExperienceChange}
+        />
+      )
+    }
     return (
       <div className="App">
         <div className='column'>

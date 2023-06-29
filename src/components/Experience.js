@@ -21,6 +21,7 @@ class Experience extends Component {
                     name="companyName"
                     value={companyName}
                     onChange={(event) => onExperienceChange(index, event)}
+                    // onChange={(event) => this.props.handleInputChange(event)}
                 />
                 <input
                     placeholder="Position"
