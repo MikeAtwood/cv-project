@@ -20,7 +20,7 @@ class Form extends Component {
                         handleInputChange={handleInputChange}
                     />
                     <Experience
-                        // handleInputChange={handleInputChange}
+                        handleInputChange={handleInputChange}
                         onExperienceChange={onExperienceChange}
                     />
                      {experienceSections}
