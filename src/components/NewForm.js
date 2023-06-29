@@ -122,9 +122,6 @@ class NewForm extends Component {
                         name="jobEndDate"
                         value={jobEndDate}
                         readOnly />
-
-
-
                     {experienceSections}
                 </div>
             </div>
