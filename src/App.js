@@ -61,12 +61,25 @@ class App extends Component {
       ...updatedExperiences[index],
       [name]: value
     }
+    console.log('Previous state:', this.state)
+
     this.setState({
       newFormData: {
         ...newFormData,
-        experiences: updatedExperiences
-      }
-    })
+        experiences: updatedExperiences,
+        forceRender: Date.now(), 
+      },
+    },
+    () => {
+      this.setState({
+        newFormData: {
+          ...newFormData,
+          forceRender: null,
+        }
+      })
+      console.log('Updated state:', this.state); // Add console log after state update
+    }
+    )
   }
 
   render() {
