@@ -12,11 +12,11 @@ class NewForm extends Component {
             titleOfStudy,
             studyStartDate,
             studyEndDate,
-            // companyName,
-            // position,
-            // mainTasks,
-            // jobStartDate,
-            // jobEndDate,
+            companyName,
+            position,
+            mainTasks,
+            jobStartDate,
+            jobEndDate,
             experienceSections
         } = this.props
 
@@ -80,53 +80,50 @@ class NewForm extends Component {
                         readOnly
                     />
                     <input
-                                className="more-info"
-                                type="text"
-                                style={{ border: 'none' }}
-                                name="studyEndDate"
-                                value={studyEndDate}
-                                readOnly />
-                    {experienceSections.map((experience, index) => (
-                    <><div key={index} className="input-info">
-                            
-                        </div><div className="input-info">
-                                <input
-                                    className="extra-info"
-                                    type="text"
-                                    style={{ border: 'none' }}
-                                    name={`companyName${index}`}
-                                    value={experience.companyName}
-                                    readOnly />
-                                <input
-                                    className="more-info"
-                                    type="text"
-                                    style={{ border: 'none' }}
-                                    name={`position${index}`}
-                                    value={experience.position}
-                                    readOnly />
-                                <input
-                                    className="more-info"
-                                    type="text"
-                                    style={{ border: 'none' }}
-                                    name={`mainTasks${index}`}
-                                    value={experience.mainTasks}
-                                    readOnly />
-                                <input
-                                    className="more-info"
-                                    type="text"
-                                    style={{ border: 'none' }}
-                                    name={`jobStartDate${index}`}
-                                    value={experience.jobStartDate}
-                                    readOnly />
-                                <input
-                                    className="more-info"
-                                    type="text"
-                                    style={{ border: 'none' }}
-                                    name={`jobEndDate${index}`}
-                                    value={experience.jobEndDate}
-                                    readOnly />
-                            </div></>
-                    ))}
+                        className="more-info"
+                        type="text"
+                        style={{ border: 'none' }}
+                        name="studyEndDate"
+                        value={studyEndDate}
+                        readOnly />
+
+                    <input
+                        className="extra-info"
+                        type="text"
+                        style={{ border: 'none' }}
+                        name="companyName"
+                        value={companyName}
+                        readOnly />
+                    <input
+                        className="more-info"
+                        type="text"
+                        style={{ border: 'none' }}
+                        name="position"
+                        value={position}
+                        readOnly />
+                    <input
+                        className="more-info"
+                        type="text"
+                        style={{ border: 'none' }}
+                        name="mainTasks"
+                        value={mainTasks}
+                        readOnly />
+                    <input
+                        className="more-info"
+                        type="text"
+                        style={{ border: 'none' }}
+                        name="jobStartData"
+                        value={jobStartDate}
+                        readOnly />
+                    <input
+                        className="more-info"
+                        type="text"
+                        style={{ border: 'none' }}
+                        name="jobEndDate"
+                        value={jobEndDate}
+                        readOnly />
+
+
 
                     {experienceSections}
                 </div>
