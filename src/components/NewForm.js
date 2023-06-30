@@ -86,7 +86,8 @@ class NewForm extends Component {
                         name="studyEndDate"
                         value={studyEndDate}
                         readOnly />
-
+                </div>
+                <div className="input-info">
                     <input
                         className="extra-info"
                         type="text"
@@ -122,8 +123,9 @@ class NewForm extends Component {
                         name="jobEndDate"
                         value={jobEndDate}
                         readOnly />
-                    {experienceSections}
                 </div>
+                    {experienceSections}
+                
             </div>
         )
     }
