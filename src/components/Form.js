@@ -9,7 +9,7 @@ class Form extends Component {
     
 
    render() {
-        const { handleInputChange, onExperienceChange, experienceSections, handleAddExperience } = this.props
+        const { handleInputChange, experienceSections, handleAddExperience } = this.props
         return (
             <div>
                 <div className="input-field">
@@ -21,7 +21,7 @@ class Form extends Component {
                     />
                     <Experience
                         handleInputChange={handleInputChange}
-                        onExperienceChange={onExperienceChange}
+                        // onExperienceChange={onExperienceChange}
                     />
                      {experienceSections}
                      <button onClick={() => handleAddExperience()}>Add+</button>

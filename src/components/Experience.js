@@ -9,7 +9,6 @@ class Experience extends Component {
             mainTasks,
             jobStartDate,
             jobEndDate,
-            // onExperienceChange
         } = this.props;
         return(
             <div className="input-info">
