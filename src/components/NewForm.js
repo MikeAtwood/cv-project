@@ -17,7 +17,7 @@ class NewForm extends Component {
             mainTasks,
             jobStartDate,
             jobEndDate,
-            experienceSections
+            // experienceSections
         } = this.props
 
         return (
@@ -113,7 +113,7 @@ class NewForm extends Component {
                         className="more-info"
                         type="text"
                         style={{ border: 'none' }}
-                        name="jobStartData"
+                        name="jobStartDate"
                         value={jobStartDate}
                         readOnly />
                     <input

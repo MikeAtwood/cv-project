@@ -38,7 +38,11 @@ class App extends Component {
     this.setState(prevState => ({
       newFormData: {
         ...prevState.newFormData,
-        [name]: value
+        [name]: value,
+        experiences: prevState.newFormData.experiences.map(experience => ({
+          ...experience,
+          [name]: value
+        }))
       }
     }))
   }
