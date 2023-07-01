@@ -12,12 +12,7 @@ class NewForm extends Component {
             titleOfStudy,
             studyStartDate,
             studyEndDate,
-            companyName,
-            position,
-            mainTasks,
-            jobStartDate,
-            jobEndDate,
-            // experienceSections
+            experiences,
         } = this.props
 
         return (
@@ -87,45 +82,52 @@ class NewForm extends Component {
                         value={studyEndDate}
                         readOnly />
                 </div>
-                <div className="input-info">
-                    <input
-                        className="extra-info"
-                        type="text"
-                        style={{ border: 'none' }}
-                        name="companyName"
-                        value={companyName}
-                        readOnly />
-                    <input
-                        className="more-info"
-                        type="text"
-                        style={{ border: 'none' }}
-                        name="position"
-                        value={position}
-                        readOnly />
-                    <input
-                        className="more-info"
-                        type="text"
-                        style={{ border: 'none' }}
-                        name="mainTasks"
-                        value={mainTasks}
-                        readOnly />
-                    <input
-                        className="more-info"
-                        type="text"
-                        style={{ border: 'none' }}
-                        name="jobStartDate"
-                        value={jobStartDate}
-                        readOnly />
-                    <input
-                        className="more-info"
-                        type="text"
-                        style={{ border: 'none' }}
-                        name="jobEndDate"
-                        value={jobEndDate}
-                        readOnly />
-                </div>
-                    {/* {experienceSections} */}
-                
+                {experiences.map((experience, index) => (
+                    <div className="input-info" key={index}>
+                        <input
+                            className="extra-info"
+                            type="text"
+                            style={{ border: 'none' }}
+                            name={`experiences[${index}].companyName`}
+                            value={experience.companyName}
+                            readOnly
+                        />
+                        <input
+                            className="more-info"
+                            type="text"
+                            style={{ border: 'none' }}
+                            name={`experiences[${index}].position`}
+                            value={experience.position}
+                            readOnly
+                        />
+                        <input
+                            className="more-info"
+                            type="text"
+                            style={{ border: 'none' }}
+                            name={`experiences[${index}].mainTasks`}
+                            value={experience.mainTasks}
+                            readOnly
+                        />
+                        <input
+                            className="more-info"
+                            type="text"
+                            style={{ border: 'none' }}
+                            name={`experiences[${index}].jobStartDate`}
+                            value={experience.jobStartDate}
+                            readOnly
+                        />
+                        <input
+                            className="more-info"
+                            type="text"
+                            style={{ border: 'none' }}
+                            name={`experiences[${index}].jobEndDate`}
+                            value={experience.jobEndDate}
+                            readOnly
+                        />
+                    </div>
+                ))}
+                {/* {experienceSections} */}
+
             </div>
         )
     }
