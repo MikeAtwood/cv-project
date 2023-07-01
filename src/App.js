@@ -52,7 +52,7 @@ class App extends Component {
       newFormData: {
         ...prevState.newFormData,
         numExperiences: prevState.newFormData.numExperiences + 1,
-        experiences: [...prevState.newFormData.experiences, { company: '', position: '', tasks: '', startDate: '', endDate: '' }]
+        experiences: [...prevState.newFormData.experiences, { companyName: '', position: '', mainTasks: '', jobStartDate: '', jobEndDate: '' }]
       }
     }))
   }
@@ -125,6 +125,7 @@ class App extends Component {
             updatedExperiences={this.state.updatedExperiences}
             experiences={this.state.newFormData.experiences}
             experienceSections={experienceSections}
+            handleInputChange={this.handleInputChange}
           />
         </div>
 
