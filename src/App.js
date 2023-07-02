@@ -33,18 +33,36 @@ class App extends Component {
     }
   }
 
+  // handleInputChange = (event) => {
+  //   const { name, value } = event.target
+  //   this.setState(prevState => ({
+  //     newFormData: {
+  //       ...prevState.newFormData,
+  //       [name]: value,
+  //       experiences: prevState.newFormData.experiences.map(experience => ({
+  //         ...experience,
+  //         [name]: value
+  //       }))
+  //     }
+  //   }))
+  // }
+
+
   handleInputChange = (event) => {
-    const { name, value } = event.target
-    this.setState(prevState => ({
-      newFormData: {
-        ...prevState.newFormData,
-        [name]: value,
-        experiences: prevState.newFormData.experiences.map(experience => ({
-          ...experience,
-          [name]: value
-        }))
-      }
-    }))
+    const { name, value } = event.target;
+    this.setState(prevState => {
+      const updatedExperiences = prevState.newFormData.experiences.map(experience => ({
+        ...experience,
+        [name]: value
+      }));
+      return {
+        newFormData: {
+          ...prevState.newFormData,
+          [name]: value,
+          experiences: updatedExperiences
+        }
+      };
+    });
   }
 
   createNewExperience = () => {
@@ -65,7 +83,8 @@ class App extends Component {
       this.setState(prevState => ({
         newFormData: {
           ...prevState.newFormData,
-          experiences: [...prevState.newFormData.experiences, newExperience]
+          experiences: [...prevState.newFormData.experiences, newExperience],
+          numExperiences: prevState.newFormData.experiences.length + 1
         }
       }))
     }
