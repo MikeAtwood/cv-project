@@ -114,16 +114,17 @@ class App extends Component {
     const { numExperiences, experiences } = this.state.newFormData
     const experienceSections = []
     for (let i = 0; i < numExperiences; i++) {
+      const { companyName, position, mainTasks, jobStartDate, jobEndDate } = experiences[i];
       experienceSections.push(
         <Experience
           key={i}
           index={i}
-          companyName={experiences[i].companyName}
-          position={experiences[i].position}
-          mainTasks={experiences[i].mainTasks}
-          jobStartDate={experiences[i].jobStartDate}
-          jobEndDate={experiences[i].jobEndDate}
-          onExperienceChange={this.handleExperienceChange}
+          companyName={companyName}
+          position={position}
+          mainTasks={mainTasks}
+          jobStartDate={jobStartDate}
+          jobEndDate={jobEndDate}
+          handleInputChange={this.handleInputChange}
         />
       )
     }
