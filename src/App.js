@@ -47,35 +47,49 @@ class App extends Component {
     }))
   }
 
+  createNewExperience = () => {
+    return {
+      companyName: '',
+      position: '',
+      mainTasks: '',
+      jobStartDate: '',
+      jobEndDate: ''
+    }
+  }
+
   handleAddExperience = () => {
-    this.setState(prevState => ({
-      newFormData: {
-        ...prevState.newFormData,
-        numExperiences: prevState.newFormData.numExperiences + 1,
-        experiences: [...prevState.newFormData.experiences, { companyName: '', position: '', mainTasks: '', jobStartDate: '', jobEndDate: '' }]
-      }
-    }))
-  }
-
-  handleExperienceChange = (index, event) => {
     const { newFormData } = this.state
-    const { experiences } = newFormData
-    const { name, value } = event.target
-    const updatedExperiences = [...experiences]
-    updatedExperiences[index] = {
-      ...updatedExperiences[index],
-      [name]: value
+    const { experiences, maxExperiences } = newFormData
+    if (experiences.length < maxExperiences) {
+      const newExperience = this.createNewExperience();
+      this.setState(prevState => ({
+        newFormData: {
+          ...prevState.newFormData,
+          experiences: [...prevState.newFormData.experiences, newExperience]
+        }
+      }))
     }
-
-    const updatedFormData = {
-      ...newFormData,
-      experiences: updatedExperiences
-    }
-
-    this.setState({
-      newFormData: updatedFormData
-    })
   }
+
+  // handleExperienceChange = (index, event) => {
+  //   const { newFormData } = this.state
+  //   const { experiences } = newFormData
+  //   const { name, value } = event.target
+  //   const updatedExperiences = [...experiences]
+  //   updatedExperiences[index] = {
+  //     ...updatedExperiences[index],
+  //     [name]: value
+  //   }
+
+  //   const updatedFormData = {
+  //     ...newFormData,
+  //     experiences: updatedExperiences
+  //   }
+
+  //   this.setState({
+  //     newFormData: updatedFormData
+  //   })
+  // }
 
   render() {
     const { numExperiences, experiences } = this.state.newFormData
