@@ -113,12 +113,12 @@ class App extends Component {
   render() {
     const { numExperiences, experiences } = this.state.newFormData
     const experienceSections = []
-    for (let i = 0; i < numExperiences; i++) {
-      const { companyName, position, mainTasks, jobStartDate, jobEndDate } = experiences[i];
+    for (let index = 0; index < numExperiences; index++) {
+      const { companyName, position, mainTasks, jobStartDate, jobEndDate } = experiences[index];
       experienceSections.push(
         <Experience
-          key={i}
-          index={i}
+          key={index}
+          index={index}
           companyName={companyName}
           position={position}
           mainTasks={mainTasks}

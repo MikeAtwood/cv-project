@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class Experience extends Component {
     render() {
         const {
-            // index,
+            index,
             companyName,
             position, 
             mainTasks,
@@ -17,7 +17,7 @@ class Experience extends Component {
                     placeholder="Company"
                     type="text"
                     style={{ border: 'none' }}
-                    name="companyName"
+                    name={`companyName${index}`}
                     value={companyName}
                     // onChange={(event) => onExperienceChange(index, event)}
                     onChange={(event) => this.props.handleInputChange(event)}
@@ -26,7 +26,7 @@ class Experience extends Component {
                     placeholder="Position"
                     type="text"
                     style={{ border: 'none' }}
-                    name="position"
+                    name={`position${index}`}
                     value={position}
                     // onChange={(event) => onExperienceChange(index, event)}
                     onChange={(event) => this.props.handleInputChange(event)}
@@ -35,7 +35,7 @@ class Experience extends Component {
                     placeholder="Tasks"
                     type="text"
                     style={{ border: 'none' }}
-                    name="mainTasks"
+                    name={`mainTasks${index}`}
                     value={mainTasks}
                     // onChange={(event) => onExperienceChange(index, event)}
                     onChange={(event) => this.props.handleInputChange(event)}
