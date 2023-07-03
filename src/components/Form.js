@@ -2,14 +2,9 @@ import React, { Component } from "react";
 import General from "./General";
 import Education from "./Education";
 import Experience from "./Experience";
-
-class Form extends Component {
-   
-
-    
-
-   render() {
-        const { handleInputChange, experienceSections, handleAddExperience } = this.props
+ class Form extends Component {
+    render() {
+        const { handleInputChange, experienceSections, handleAddExperience } = this.props;
         return (
             <div>
                 <div className="input-field">
@@ -19,16 +14,17 @@ class Form extends Component {
                     <Education
                         handleInputChange={handleInputChange}
                     />
-                    <Experience
-                        handleInputChange={handleInputChange}
-                        // onExperienceChange={onExperienceChange}
-                    />
-                     {experienceSections}
-                     <button onClick={() => handleAddExperience()}>Add+</button>
+                    {experienceSections.map((experience, index) => (
+                        <Experience
+                            key={index}
+                            handleInputChange={handleInputChange}
+                            // Pass other necessary props here
+                        />
+                    ))}
+                    <button onClick={() => handleAddExperience()}>Add+</button>
                 </div>
             </div>
-        )
+        );
     }
 }
-
-export default Form
+ export default Form;

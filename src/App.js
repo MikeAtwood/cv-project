@@ -75,20 +75,23 @@ class App extends Component {
     }
   }
 
-  handleAddExperience = () => {
-    const { newFormData } = this.state
-    const { experiences, maxExperiences } = newFormData
-    if (experiences.length < maxExperiences) {
-      const newExperience = this.createNewExperience();
-      this.setState(prevState => ({
+handleAddExperience = () => {
+  const { newFormData } = this.state;
+  const { experiences, maxExperiences } = newFormData;
+  if (experiences.length < maxExperiences) {
+    const newExperience = this.createNewExperience();
+    this.setState(prevState => {
+      const newExperiences = [...prevState.newFormData.experiences, newExperience];
+      return {
         newFormData: {
           ...prevState.newFormData,
-          experiences: [...prevState.newFormData.experiences, newExperience],
-          numExperiences: prevState.newFormData.experiences.length + 1
+          experiences: newExperiences,
+          numExperiences: newExperiences.length
         }
-      }))
-    }
+      };
+    });
   }
+};
 
   // handleExperienceChange = (index, event) => {
   //   const { newFormData } = this.state
@@ -111,23 +114,25 @@ class App extends Component {
   // }
 
   render() {
-    const { numExperiences, experiences } = this.state.newFormData
-    const experienceSections = []
-    for (let index = 0; index < numExperiences; index++) {
-      const { companyName, position, mainTasks, jobStartDate, jobEndDate } = experiences[index];
-      experienceSections.push(
-        <Experience
-          key={index}
-          index={index}
-          companyName={companyName}
-          position={position}
-          mainTasks={mainTasks}
-          jobStartDate={jobStartDate}
-          jobEndDate={jobEndDate}
-          handleInputChange={this.handleInputChange}
-        />
-      )
-    }
+    
+   
+  const { experiences } = this.state.newFormData
+  const experienceSections = experiences.map((experience, index) => {
+    const { companyName, position, mainTasks, jobStartDate, jobEndDate } = experience;
+    return (
+      <Experience
+        key={index}
+        index={index}
+        companyName={companyName}
+        position={position}
+        mainTasks={mainTasks}
+        jobStartDate={jobStartDate}
+        jobEndDate={jobEndDate}
+        handleInputChange={this.handleInputChange}
+      />
+    )
+  });
+
     return (
       <div className="App">
         <div className='column'>
