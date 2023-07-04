@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { v4 as uuidv4 } from 'uuid'
 import General from "./General";
 import Education from "./Education";
 import Experience from "./Experience";
@@ -16,7 +17,7 @@ import Experience from "./Experience";
                     />
                     {experienceSections.map((experience) => (
                         <Experience
-                            key={experience.id}
+                            key={uuidv4()}
                             experience={experience}
                             handleInputChange={handleInputChange}
                             // Pass other necessary props here

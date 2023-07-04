@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {v4 as uuidv4 } from "uuid"
 
 class Experience extends Component {
     render() {
@@ -8,13 +9,15 @@ class Experience extends Component {
         } = this.props;
             
         const {
-            id,
             companyName,
             position, 
             mainTasks,
             jobStartDate,
             jobEndDate,
         } = experience
+
+        const id = uuidv4()
+        
         return(
             <div className="input-info">
                 <h3>Experience</h3>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import { v4 as uuidv4 } from 'uuid'
 import Form from './components/Form';
 import NewForm from './components/NewForm';
 import Experience from './components/Experience';
@@ -22,6 +23,7 @@ class App extends Component {
         maxExperiences: 5, // add maxExperiences property
         experiences: [
           {
+            id: uuidv4(),
             companyName: '',
             position: '',
             mainTasks: '',
@@ -47,7 +49,7 @@ class App extends Component {
   //   }))
   // }
 
-  handleInputChange = (id, event) => {
+  handleInputChange = (event, id) => {
     const { name, value } = event.target;
     this.setState(prevState => {
       const updatedExperiences = prevState.newFormData.experiences.map((experience) => {
@@ -72,11 +74,12 @@ class App extends Component {
 
   createNewExperience = () => {
     return {
+      id: uuidv4(),
       companyName: '',
       position: '',
       mainTasks: '',
       jobStartDate: '',
-      jobEndDate: ''
+      jobEndDate: '',
     }
   }
 
