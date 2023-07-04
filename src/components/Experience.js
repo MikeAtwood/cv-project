@@ -17,19 +17,19 @@ class Experience extends Component {
                     placeholder="Company"
                     type="text"
                     style={{ border: 'none' }}
-                    name={`companyName${index}`}
+                    name="companyName"
                     value={companyName}
                     // onChange={(event) => onExperienceChange(index, event)}
-                    onChange={(event) => this.props.handleInputChange(event)}
+                    onChange={(event) => this.props.handleInputChange(index, event)}
                 />
                 <input
                     placeholder="Position"
                     type="text"
                     style={{ border: 'none' }}
-                    name={`position${index}`}
+                    name="position"
                     value={position}
                     // onChange={(event) => onExperienceChange(index, event)}
-                    onChange={(event) => this.props.handleInputChange(event)}
+                    onChange={(event) => this.props.handleInputChange(index, event)}
                 />
                 <input
                     placeholder="Tasks"
