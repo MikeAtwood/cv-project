@@ -17,7 +17,7 @@ class Experience extends Component {
         } = experience
 
         const id = uuidv4()
-        
+
         return(
             <div className="input-info">
                 <h3>Experience</h3>
@@ -28,7 +28,7 @@ class Experience extends Component {
                     name="companyName"
                     value={companyName}
                     // onChange={(event) => onExperienceChange(index, event)}
-                    onChange={(event) => handleInputChange(id, event)}
+                    onChange={(event) => handleInputChange(event, id)}
                 />
                 <input
                     placeholder="Position"
@@ -37,7 +37,7 @@ class Experience extends Component {
                     name="position"
                     value={position}
                     // onChange={(event) => onExperienceChange(index, event)}
-                    onChange={(event) => handleInputChange(id, event)}
+                    onChange={(event) => handleInputChange(event, id)}
                 />
                 <input
                     placeholder="Tasks"
@@ -46,7 +46,7 @@ class Experience extends Component {
                     name="mainTasks"
                     value={mainTasks}
                     // onChange={(event) => onExperienceChange(index, event)}
-                    onChange={(event) => handleInputChange(id, event)}
+                    onChange={(event) => handleInputChange(event, id)}
                 />
                 <input
                     placeholder="Start Date"
@@ -55,7 +55,7 @@ class Experience extends Component {
                     name="jobStartDate"
                     value={jobStartDate}
                     // onChange={(event) => onExperienceChange(index, event)}
-                    onChange={(event) => handleInputChange(id, event)}
+                    onChange={(event) => handleInputChange(event, id)}
                 />
                 <input
                     placeholder="End Date"
@@ -64,7 +64,7 @@ class Experience extends Component {
                     name="jobEndDate"
                     value={jobEndDate}
                     // onChange={(event) => onExperienceChange(index, event)}
-                    onChange={(event) => handleInputChange(id, event)}
+                    onChange={(event) => handleInputChange(event, id)}
                     min={jobStartDate}
                 />
                 
