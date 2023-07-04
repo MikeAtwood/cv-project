@@ -47,14 +47,18 @@ class App extends Component {
   //   }))
   // }
 
-
-  handleInputChange = (event) => {
+  handleInputChange = (id, event) => {
     const { name, value } = event.target;
     this.setState(prevState => {
-      const updatedExperiences = prevState.newFormData.experiences.map(experience => ({
-        ...experience,
-        [name]: value
-      }));
+      const updatedExperiences = prevState.newFormData.experiences.map((experience) => {
+        if (experience.id === id) {
+          return {
+            ...experience,
+            [name]: value
+          };
+        }
+        return experience;
+      });
       return {
         newFormData: {
           ...prevState.newFormData,
@@ -64,6 +68,7 @@ class App extends Component {
       };
     });
   }
+ 
 
   createNewExperience = () => {
     return {
@@ -121,7 +126,7 @@ handleAddExperience = () => {
     const { companyName, position, mainTasks, jobStartDate, jobEndDate } = experience;
     return (
       <Experience
-        key={index}
+        key={experience.id}
         index={index}
         companyName={companyName}
         position={position}

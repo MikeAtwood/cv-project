@@ -14,9 +14,10 @@ import Experience from "./Experience";
                     <Education
                         handleInputChange={handleInputChange}
                     />
-                    {experienceSections.map((experience, index) => (
+                    {experienceSections.map((experience) => (
                         <Experience
-                            key={index}
+                            key={experience.id}
+                            experience={experience}
                             handleInputChange={handleInputChange}
                             // Pass other necessary props here
                         />
