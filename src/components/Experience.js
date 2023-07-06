@@ -25,7 +25,6 @@ class Experience extends Component {
                     style={{ border: 'none' }}
                     name="companyName"
                     value={companyName}
-                    // onChange={(event) => onExperienceChange(index, event)}
                     onChange={(event) => handleInputChange(event, id)}
                 />
                 <input
@@ -34,7 +33,6 @@ class Experience extends Component {
                     style={{ border: 'none' }}
                     name="position"
                     value={position}
-                    // onChange={(event) => onExperienceChange(index, event)}
                     onChange={(event) => handleInputChange(event, id)}
                 />
                 <input
@@ -43,7 +41,6 @@ class Experience extends Component {
                     style={{ border: 'none' }}
                     name="mainTasks"
                     value={mainTasks}
-                    // onChange={(event) => onExperienceChange(index, event)}
                     onChange={(event) => handleInputChange(event, id)}
                 />
                 <input
@@ -52,7 +49,6 @@ class Experience extends Component {
                     style={{ border: 'none' }}
                     name="jobStartDate"
                     value={jobStartDate}
-                    // onChange={(event) => onExperienceChange(index, event)}
                     onChange={(event) => handleInputChange(event, id)}
                 />
                 <input
@@ -61,7 +57,6 @@ class Experience extends Component {
                     style={{ border: 'none' }}
                     name="jobEndDate"
                     value={jobEndDate}
-                    // onChange={(event) => onExperienceChange(index, event)}
                     onChange={(event) => handleInputChange(event, id)}
                     min={jobStartDate}
                 />
