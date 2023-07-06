@@ -35,20 +35,6 @@ class App extends Component {
     }
   }
 
-  // handleInputChange = (event) => {
-  //   const { name, value } = event.target
-  //   this.setState(prevState => ({
-  //     newFormData: {
-  //       ...prevState.newFormData,
-  //       [name]: value,
-  //       experiences: prevState.newFormData.experiences.map(experience => ({
-  //         ...experience,
-  //         [name]: value
-  //       }))
-  //     }
-  //   }))
-  // }
-
   handleInputChange = (event, id) => {
     const { name, value } = event.target;
     this.setState(prevState => {
@@ -70,76 +56,68 @@ class App extends Component {
       };
     });
   }
- 
+
 
   createNewExperience = () => {
-    return {
-      id: uuidv4(),
-      companyName: '',
-      position: '',
-      mainTasks: '',
-      jobStartDate: '',
-      jobEndDate: '',
+    const { newFormData } = this.state
+    const { maxExperiences, experiences } = newFormData
+
+    if (experiences.length < maxExperiences) {
+      const newExperience = {
+        id: uuidv4(),
+        companyName: '',
+        position: '',
+        mainTasks: '',
+        jobStartDate: '',
+        jobEndDate: '',
+      }
+
+      this.setState((prevState) => ({
+        newFormData: {
+          ...prevState.newFormData,
+          experiences: [...prevState.newFormData.experiences, newExperience]
+        }
+      }))
     }
   }
 
-handleAddExperience = () => {
-  const { newFormData } = this.state;
-  const { experiences, maxExperiences } = newFormData;
-  if (experiences.length < maxExperiences) {
-    const newExperience = this.createNewExperience();
-    this.setState(prevState => {
-      const newExperiences = [...prevState.newFormData.experiences, newExperience];
-      return {
-        newFormData: {
-          ...prevState.newFormData,
-          experiences: newExperiences,
-          numExperiences: newExperiences.length
-        }
-      };
-    });
-  }
-};
-
-  // handleExperienceChange = (index, event) => {
-  //   const { newFormData } = this.state
-  //   const { experiences } = newFormData
-  //   const { name, value } = event.target
-  //   const updatedExperiences = [...experiences]
-  //   updatedExperiences[index] = {
-  //     ...updatedExperiences[index],
-  //     [name]: value
-  //   }
-
-  //   const updatedFormData = {
-  //     ...newFormData,
-  //     experiences: updatedExperiences
-  //   }
-
-  //   this.setState({
-  //     newFormData: updatedFormData
-  //   })
-  // }
+  handleAddExperience = () => {
+    const { newFormData } = this.state;
+    const { experiences, maxExperiences } = newFormData;
+    if (experiences.length < maxExperiences) {
+      const newExperience = this.createNewExperience();
+      this.setState(prevState => {
+        const newExperiences = [...prevState.newFormData.experiences, newExperience];
+        return {
+          newFormData: {
+            ...prevState.newFormData,
+            experiences: newExperiences,
+            numExperiences: newExperiences.length
+          }
+        };
+      });
+    }
+  };
 
   render() {
-    
-   
-  const { experiences } = this.state.newFormData
-  const experienceSections = experiences.map((experience) => {
-    const { companyName, position, mainTasks, jobStartDate, jobEndDate } = experience;
-    return (
-      <Experience
-        key={experience.id}
-        experience={experience}
-        companyName={companyName}
-        position={position}
-        mainTasks={mainTasks}
-        jobStartDate={jobStartDate}
-        jobEndDate={jobEndDate}
-        handleInputChange={this.handleInputChange}
-      />
-    )
-  });
+
+
+    const { experiences } = this.state.newFormData
+    const experienceSections = experiences.map((experience) => {
+      const { companyName, position, mainTasks, jobStartDate, jobEndDate } = experience;
+      return (
+        <Experience
+          key={experience.id}
+          experience={experience}
+          companyName={companyName}
+          position={position}
+          mainTasks={mainTasks}
+          jobStartDate={jobStartDate}
+          jobEndDate={jobEndDate}
+          handleInputChange={(event) => this.handleInputChange(event, experience.id)}
+        />
+      )
+    });
 
     return (
       <div className="App">
@@ -164,12 +142,6 @@ handleAddExperience = () => {
             titleOfStudy={this.state.newFormData.titleOfStudy}
             studyStartDate={this.state.newFormData.studyStartDate}
             studyEndDate={this.state.newFormData.studyEndDate}
-            // companyName={this.state.newFormData.companyName}
-            // position={this.state.newFormData.position}
-            // mainTasks={this.state.newFormData.mainTasks}
-            // jobStartDate={this.state.newFormData.jobStartDate}
-            // jobEndDate={this.state.newFormData.jobEndDate}
-            // updatedExperiences={this.state.updatedExperiences}
             experiences={this.state.newFormData.experiences}
             experienceSections={experienceSections}
             handleInputChange={this.handleInputChange}

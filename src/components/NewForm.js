@@ -82,13 +82,13 @@ class NewForm extends Component {
                         value={studyEndDate}
                         readOnly />
                 </div>
-                {experienceSections.map((experience, index) => (
-                    <div className="input-info" key={index}>
+                {experienceSections.map((experience) => (
+                    <div className="input-info" key={experience.id} experience={experience}>
                         <input
                             className="extra-info"
                             type="text"
                             style={{ border: 'none' }}
-                            name={`experiences[${index}].companyName`}
+                            name="companyName"
                             value={experience.companyName}
                             readOnly
                         />
@@ -96,7 +96,7 @@ class NewForm extends Component {
                             className="more-info"
                             type="text"
                             style={{ border: 'none' }}
-                            name={`experiences[${index}].position`}
+                            name={`experiences.position`}
                             value={experience.position}
                             readOnly
                         />
@@ -104,7 +104,7 @@ class NewForm extends Component {
                             className="more-info"
                             type="text"
                             style={{ border: 'none' }}
-                            name={`experiences[${index}].mainTasks`}
+                            name={`experiences.mainTasks`}
                             value={experience.mainTasks}
                             readOnly
                         />
@@ -112,7 +112,7 @@ class NewForm extends Component {
                             className="more-info"
                             type="text"
                             style={{ border: 'none' }}
-                            name={`experiences[${index}].jobStartDate`}
+                            name={`experiences.jobStartDate`}
                             value={experience.jobStartDate}
                             readOnly
                         />
@@ -120,7 +120,7 @@ class NewForm extends Component {
                             className="more-info"
                             type="text"
                             style={{ border: 'none' }}
-                            name={`experiences[${index}].jobEndDate`}
+                            name={`experiences.jobEndDate`}
                             value={experience.jobEndDate}
                             readOnly
                         />
