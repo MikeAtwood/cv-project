@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import {v4 as uuidv4 } from "uuid"
 
 class Experience extends Component {
     render() {
         const {
+            id,
             experience,
             handleInputChange
         } = this.props;
@@ -15,8 +15,6 @@ class Experience extends Component {
             jobStartDate,
             jobEndDate,
         } = experience
-
-        const id = uuidv4()
 
         return(
             <div className="input-info">
