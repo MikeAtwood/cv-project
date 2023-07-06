@@ -125,7 +125,7 @@ handleAddExperience = () => {
     
    
   const { experiences } = this.state.newFormData
-  const experienceSections = experiences.map((experience, index) => {
+  const experienceSections = experiences.map((experience) => {
     const { companyName, position, mainTasks, jobStartDate, jobEndDate } = experience;
     return (
       <Experience
