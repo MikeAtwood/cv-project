@@ -101,7 +101,7 @@ class App extends Component {
   };
 
   render() {
-
+    
 
     const { experiences } = this.state.newFormData
     const experienceSections = experiences.map((experience) => {
@@ -119,7 +119,7 @@ class App extends Component {
         />
       )
     });
-
+    
     return (
       <div className="App">
         <div className='column'>
@@ -128,7 +128,6 @@ class App extends Component {
             newFormData={this.state.newFormData}
             handleInputChange={this.handleInputChange}
             handleAddExperience={this.handleAddExperience}
-            onExperienceChange={this.handleExperienceChange}
             experienceSections={experienceSections}
           />
         </div>

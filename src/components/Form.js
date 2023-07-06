@@ -14,12 +14,11 @@ import Experience from "./Experience";
                     <Education
                         handleInputChange={handleInputChange}
                     />
-                    {experienceSections.map((experience) => (
+                    {experienceSections.map((experience, index) => (
                         <Experience
-                            key={experience.id}
+                            key={index} 
                             experience={experience}
                             handleInputChange={handleInputChange}
-                            // Pass other necessary props here
                         />
                     ))}
                     <button onClick={() => handleAddExperience()}>Add+</button>
