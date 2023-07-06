@@ -130,7 +130,7 @@ handleAddExperience = () => {
     return (
       <Experience
         key={experience.id}
-        index={index}
+        experience={experience}
         companyName={companyName}
         position={position}
         mainTasks={mainTasks}
