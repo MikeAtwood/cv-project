@@ -78,6 +78,7 @@ class App extends Component {
           experiences: [...prevState.newFormData.experiences, newExperience]
         }
       }))
+      return newExperience
     }
   }
 
