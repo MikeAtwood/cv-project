@@ -3,12 +3,12 @@ import React, { Component } from "react";
 class Experience extends Component {
     render() {
         const {
-            id,
             experience,
             handleInputChange
         } = this.props;
             
         const {
+            id,
             companyName,
             position, 
             mainTasks,

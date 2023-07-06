@@ -104,16 +104,16 @@ class App extends Component {
 
     const { experiences } = this.state.newFormData
     const experienceSections = experiences.map((experience) => {
-      const { companyName, position, mainTasks, jobStartDate, jobEndDate } = experience;
+      // const { companyName, position, mainTasks, jobStartDate, jobEndDate } = experience;
       return (
         <Experience
           key={experience.id}
           experience={experience}
-          companyName={companyName}
-          position={position}
-          mainTasks={mainTasks}
-          jobStartDate={jobStartDate}
-          jobEndDate={jobEndDate}
+          // companyName={companyName}
+          // position={position}
+          // mainTasks={mainTasks}
+          // jobStartDate={jobStartDate}
+          // jobEndDate={jobEndDate}
           handleInputChange={(event) => this.handleInputChange(event, experience.id)}
         />
       )
