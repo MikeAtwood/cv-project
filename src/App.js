@@ -110,11 +110,6 @@ class App extends Component {
         <Experience
           key={experience.id}
           experience={experience}
-          // companyName={companyName}
-          // position={position}
-          // mainTasks={mainTasks}
-          // jobStartDate={jobStartDate}
-          // jobEndDate={jobEndDate}
           handleInputChange={(event) => this.handleInputChange(event, experience.id)}
         />
       )
