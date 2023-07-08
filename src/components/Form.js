@@ -18,7 +18,7 @@ import Experience from "./Experience";
                         <Experience
                             key={index} 
                             experience={experience}
-                            handleInputChange={handleInputChange}
+                            handleExperienceChange={this.props.handleExperienceChange}
                         />
                     ))}
                     <button onClick={() => handleAddExperience()}>Add+</button>

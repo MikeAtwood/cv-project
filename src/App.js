@@ -35,28 +35,58 @@ class App extends Component {
     }
   }
 
-  handleInputChange = (event, id) => {
-    const { name, value } = event.target;
+  // handleInputChange = (event, id) => {
+  //   const { name, value } = event.target;
+  //   this.setState(prevState => {
+  //     const updatedExperiences = prevState.newFormData.experiences.map((experience) => {
+  //       if (experience.id === id) {
+  //         return {
+  //           ...experience,
+  //           [name]: value
+  //         };
+  //       }
+  //       return experience;
+  //     });
+  //     return {
+  //       newFormData: {
+  //         ...prevState.newFormData,
+  //         [name]: value,
+  //         experiences: updatedExperiences
+  //       }
+  //     };
+  //   });
+  // }
+
+  handleInputChange = (event) => {
+    const {name, value} = event.target
+    this.setState(prevState => ({
+      newFormData: {
+        ...prevState.newFormData,
+        [name]: value
+      }
+    }))
+  }
+
+  handleExperienceChange = (event, index) => {
+    const { name, value } = event.target
     this.setState(prevState => {
       const updatedExperiences = prevState.newFormData.experiences.map((experience) => {
-        if (experience.id === id) {
+        if (experience.id === index) {
           return {
             ...experience,
             [name]: value
-          };
+          }
         }
-        return experience;
-      });
+        return experience
+      })
       return {
         newFormData: {
           ...prevState.newFormData,
-          [name]: value,
           experiences: updatedExperiences
         }
-      };
-    });
+      }
+    })
   }
-
 
   createNewExperience = () => {
     const newExperience = {
@@ -92,13 +122,13 @@ class App extends Component {
     
 
     const { experiences } = this.state.newFormData
-    const experienceSections = experiences.map((experience) => {
+    const experienceSections = experiences.map((experience, index) => {
       // const { companyName, position, mainTasks, jobStartDate, jobEndDate } = experience;
       return (
         <Experience
-          key={experience.id}
+          key={index}
           experience={experience}
-          handleInputChange={(event) => this.handleInputChange(event, experience.id)}
+          handleExperienceChange={(event) => this.handleExperienceChange(event, experience.id)}
         />
       )
     });
@@ -111,6 +141,7 @@ class App extends Component {
             newFormData={this.state.newFormData}
             handleInputChange={this.handleInputChange}
             handleAddExperience={this.handleAddExperience}
+            handleExperienceChange={this.handleExperienceChange}
             experienceSections={experienceSections}
           />
         </div>
