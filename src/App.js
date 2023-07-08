@@ -59,27 +59,15 @@ class App extends Component {
 
 
   createNewExperience = () => {
-    const { newFormData } = this.state
-    const { maxExperiences, experiences } = newFormData
-
-    if (experiences.length < maxExperiences) {
-      const newExperience = {
-        id: uuidv4(),
-        companyName: '',
-        position: '',
-        mainTasks: '',
-        jobStartDate: '',
-        jobEndDate: '',
-      }
-
-      this.setState((prevState) => ({
-        newFormData: {
-          ...prevState.newFormData,
-          experiences: [...prevState.newFormData.experiences, newExperience]
-        }
-      }))
-      return newExperience
+    const newExperience = {
+      id: uuidv4(),
+      companyName: '',
+      position: '',
+      mainTasks: '',
+      jobStartDate: '',
+      jobEndDate: '',
     }
+    return newExperience;
   }
 
   handleAddExperience = () => {
