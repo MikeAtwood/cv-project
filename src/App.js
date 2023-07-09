@@ -122,11 +122,11 @@ class App extends Component {
     
 
     const { experiences } = this.state.newFormData
-    const experienceSections = experiences.map((experience, index) => {
+    const experienceSections = experiences.map((experience) => {
       // const { companyName, position, mainTasks, jobStartDate, jobEndDate } = experience;
       return (
         <Experience
-          key={index}
+          key={experience.id}
           experience={experience}
           handleExperienceChange={(event) => this.handleExperienceChange(event, experience.id)}
         />
