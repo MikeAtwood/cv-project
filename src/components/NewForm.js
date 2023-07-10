@@ -12,7 +12,7 @@ class NewForm extends Component {
             titleOfStudy,
             studyStartDate,
             studyEndDate,
-            experienceSections,
+            experiences,
         } = this.props
 
         return (
@@ -82,7 +82,7 @@ class NewForm extends Component {
                         value={studyEndDate}
                         readOnly />
                 </div>
-                {experienceSections.map((experience, index) => (
+                {experiences.map((experience, index) => (
                     <div className="input-info" key={index}>
                         <input
                             className="extra-info"
