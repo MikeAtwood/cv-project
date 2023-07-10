@@ -142,7 +142,8 @@ class App extends Component {
             handleInputChange={this.handleInputChange}
             handleAddExperience={this.handleAddExperience}
             handleExperienceChange={this.handleExperienceChange}
-            experienceSections={experienceSections}
+            // experienceSections={experienceSections}
+            experiences={this.state.newFormData.experiences}
           />
         </div>
         <div className='column'>
