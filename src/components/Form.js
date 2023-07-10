@@ -2,21 +2,25 @@ import React, { Component } from "react";
 import General from "./General";
 import Education from "./Education";
 import Experience from "./Experience";
- class Form extends Component {
+class Form extends Component {
+
     render() {
-        const { handleInputChange, experienceSections, handleAddExperience } = this.props;
+        const experienceSections = [
+            { id: 1, title: "Section 1" }
+        ]
+        const { handleInputChange, handleAddExperience } = this.props;
         return (
             <div>
                 <div className="input-field">
-                    <General 
+                    <General
                         handleInputChange={handleInputChange}
                     />
                     <Education
                         handleInputChange={handleInputChange}
                     />
-                    {experienceSections.map((experience, index) => (
+                    {experienceSections.map((experience) => (
                         <Experience
-                            key={index} 
+                            key={experience.id}
                             experience={experience}
                             handleExperienceChange={this.props.handleExperienceChange}
                         />
@@ -27,4 +31,4 @@ import Experience from "./Experience";
         );
     }
 }
- export default Form;
+export default Form;

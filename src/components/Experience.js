@@ -8,7 +8,7 @@ class Experience extends Component {
         } = this.props;
             
         const {
-            index,
+            id,
             companyName,
             position, 
             mainTasks,
@@ -25,7 +25,7 @@ class Experience extends Component {
                     style={{ border: 'none' }}
                     name="companyName"
                     value={companyName}
-                    onChange={(event) => handleExperienceChange(event, index)}
+                    onChange={(event) => handleExperienceChange(event, id)}
                 />
                 <input
                     placeholder="Position"
@@ -33,7 +33,7 @@ class Experience extends Component {
                     style={{ border: 'none' }}
                     name="position"
                     value={position}
-                    onChange={(event) => handleExperienceChange(event, index)}
+                    onChange={(event) => handleExperienceChange(event, id)}
                 />
                 <input
                     placeholder="Tasks"
@@ -41,7 +41,7 @@ class Experience extends Component {
                     style={{ border: 'none' }}
                     name="mainTasks"
                     value={mainTasks}
-                    onChange={(event) => handleExperienceChange(event, index)}
+                    onChange={(event) => handleExperienceChange(event, id)}
                 />
                 <input
                     placeholder="Start Date"
@@ -49,7 +49,7 @@ class Experience extends Component {
                     style={{ border: 'none' }}
                     name="jobStartDate"
                     value={jobStartDate}
-                    onChange={(event) => handleExperienceChange(event, index)}
+                    onChange={(event) => handleExperienceChange(event, id)}
                 />
                 <input
                     placeholder="End Date"
@@ -57,7 +57,7 @@ class Experience extends Component {
                     style={{ border: 'none' }}
                     name="jobEndDate"
                     value={jobEndDate}
-                    onChange={(event) => handleExperienceChange(event, index)}
+                    onChange={(event) => handleExperienceChange(event, id)}
                     min={jobStartDate}
                 />
                 
