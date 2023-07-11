@@ -123,7 +123,6 @@ class App extends Component {
 
     const { experiences } = this.state.newFormData
     const experienceSections = experiences.map((experience) => {
-      // const { companyName, position, mainTasks, jobStartDate, jobEndDate } = experience;
       return (
         <Experience
           key={experience.id}
@@ -142,7 +141,6 @@ class App extends Component {
             handleInputChange={this.handleInputChange}
             handleAddExperience={this.handleAddExperience}
             handleExperienceChange={this.handleExperienceChange}
-            // experienceSections={experienceSections}
             experiences={this.state.newFormData.experiences}
           />
         </div>
